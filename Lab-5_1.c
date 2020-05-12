@@ -30,7 +30,7 @@ do
         scanf ("%d", &a[s]);
     if (a[s] == 0)
     {
-        zz = 1;
+        zz += 1;
     }
     s++;
 }
@@ -66,15 +66,16 @@ if (men0<=bil0)
 }else printf("\r\n%c0%c\r\n", '"', '"');
 
 
-if (zz == 1)
+if (zz > 0)
 {
+zz--;
 printf("\r\nПорядкові номери нулів:");
 for (int i = 0; i < size; i++)
 {
-    if (i+1 == size && a[i]==0)
+    if (zz > 0 && a[i] == 0)
     {
-        printf(" %d.", i+1);
-    } else if (a[i] == 0) printf(" %d,", i+1);
+        printf(" %d,", i+1); zz--;
+    } else if (zz == 0 && a[i] == 0) printf(" %d.", i+1);
 
 }
 }
